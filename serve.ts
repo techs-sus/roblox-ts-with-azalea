@@ -6,7 +6,9 @@ const server = Bun.serve({
 	port: TARGET_PORT,
 
 	routes: {
-		"/": new Response(await Bun.file("./model.luau").bytes()),
+		"/": async () => {
+			new Response(await Bun.file("./model.luau").bytes());
+		},
 	},
 });
 
