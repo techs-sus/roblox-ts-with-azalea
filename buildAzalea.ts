@@ -51,13 +51,14 @@ if (HAS_CLIENT) {
 
 	const fullClientSource = CLIENT_PAYLOAD_HEADER + (await Bun.file(clientPayloadPath).text());
 
+	// ensure that if there are other properties we don't delete them
+	serverProjectJson.tree.$properties ??= {};
+	serverProjectJson.tree.$properties.Attributes ??= {};
+
 	// inject client source as an attribute
-	serverProjectJson.tree.$properties = {
-		Attributes: {
-			[ATTRIBUTE]: {
-				String: fullClientSource,
-			},
-		},
+	// https://rojo.space/docs/v7/properties/#attributes & https://rojo.space/docs/v7/properties/#string
+	serverProjectJson.tree.$properties.Attributes[ATTRIBUTE] = {
+		String: fullClientSource,
 	};
 }
 
