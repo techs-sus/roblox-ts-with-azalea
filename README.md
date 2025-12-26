@@ -1,4 +1,4 @@
-# roblox-ts-test
+# roblox-ts-with-azalea
 
 roblox-ts template for script builders
 
