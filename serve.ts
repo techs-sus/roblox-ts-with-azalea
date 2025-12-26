@@ -7,7 +7,7 @@ const server = Bun.serve({
 
 	routes: {
 		"/": async () => {
-			return new Response(await Bun.file("./model.luau").bytes());
+			return new Response(await Bun.file("./build/run.luau").bytes());
 		},
 	},
 });

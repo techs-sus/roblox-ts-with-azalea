@@ -25,5 +25,5 @@
 		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo"
 	},
 
-	"exclude": ["serve.ts"]
+	"exclude": ["serve.ts", "buildAzalea.ts"]
 }

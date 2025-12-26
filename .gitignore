@@ -3,5 +3,4 @@
 /include
 *.tsbuildinfo
 
-model.rbxm
-model.luau
+/build
