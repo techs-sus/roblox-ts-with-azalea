@@ -1,6 +1,6 @@
 /**
  Running code on the client is possible, but please note:
- - script = ModuleScript and script.Parent = nil
+ - script = ModuleScript and the hierarchy looks like this: nil -> Model [name = "DataModel"] -> ModuleScript
  - Functions from your environment that create scripts will not work (NewScript, NewLocalScript, NewModuleScript)
  - Network serializable arguments can be passed in the form of an environment variable.
 **/
@@ -17,6 +17,7 @@ declare const clientArguments: {
 
 print("hello from client!");
 
-print(script.Parent); // nil
-print(script.ClassName); // ModuleScript
-print("got time from server:", clientArguments.time);
+print("Client is parented to", script.Parent); // DataModel (azalea)
+print("Client's parent is parented to", script.Parent?.Parent); // nil
+print("Client is running under a", script.ClassName); // ModuleScript
+print("clientArguments.time is", clientArguments.time);

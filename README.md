@@ -4,10 +4,10 @@ roblox-ts template for script builders
 
 ## Workflow
 
-If your shell supports & parallelization:
+If your shell supports & parallelization (bash, zsh):
 
 ```bash
-bun run watchAzalea & bun run watch & bun run serve
+bun run watch & bun run watchAzalea & bun run serve & :
 ```
 
 If not, run `bun run watch` and then `bun run watchAzalea` in seperate terminals.

@@ -5,7 +5,7 @@ script.SetAttribute("ClientLoaderSource", undefined);
 
 /**
  Running code on the client is possible, but please note:
- - script = ModuleScript and script.Parent = nil
+ - script = ModuleScript and the hierarchy looks like this: nil -> Model [name = "DataModel"] -> ModuleScript
  - Functions from your environment that create scripts will not work (NewScript, NewLocalScript, NewModuleScript)
  - Network serializable arguments can be passed in the form of an environment variable.
 **/
