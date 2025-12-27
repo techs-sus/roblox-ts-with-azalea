@@ -1,27 +1,33 @@
 # roblox-ts-with-azalea
 
-roblox-ts template for script builders
+roblox-ts template using [azalea](https://github.com/techs-sus/azalea) for script builders
 
 ## Workflow
 
-If your shell supports & parallelization (bash, zsh):
+If you use [Visual Studio Code](https://code.visualstudio.com), a `code-workspace` file is provided at [`roblox-ts-with-azalea.code-workspace`](roblox-ts-with-azalea.code-workspace). It is recommended you use it to manage your stress from managing 50+ files at once.
+
+A watcher is available with:
 
 ```bash
-bun run watch & bun run watchAzalea & bun run serve & :
+bun run watch
 ```
 
-If not, run `bun run watch` and then `bun run watchAzalea` in seperate terminals.
-
-You should see a file in `build/run.luau` after running these commands. You can run this file in Lua Sandbox, Lua Assembling, or any compliant OpenSB implementation. Azalea's novel module method is used, so you should be able to run it anywhere.
-
-There is an OPTIONAL http server available by running `bun run serve.ts`. It depends on [devtunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows), and you should run `devtunnel create` if it errors.
-
-A more traditional, non-incremental build is still available with:
+A traditional, non-incremental build is available with:
 
 ```bash
 bun run build
 ```
 
+Both commands output to the file `build/run.luau`.
+
+You should see the file `build/run.luau` a bit after starting the watcher. By default, Azalea's novel module method is used, so it should run anywhere. I have tested it personally with OpenSB, so that is what will get the most support. There should be nothing stopping this template from working on Lua Sandbox, Lua Assembling, Void Script Builder, or any other script builders.
+
+An [devtunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) dependant optional HTTP server is available with `bun run serve`. You should be able to easily swap out [devtunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) for {local,hyper}tunnel.
+
 ### Client execution
 
-Client support is included in this template. If you do not want it, you can delete `src/client` and `src/utils.ts`.
+This template requires a client realm to function.
+
+Depending on your target environment, you should modify `AZALEA_FLAGS` in [`buildFullModule.ts`](src/buildFullModule.ts) to tweak Azalea's output for compatability, code size, formatting, etc.
+
+The function `loadClientCode` in [`server/src/utils.ts`](server/src/utils.ts) reveals how client execution is done.
