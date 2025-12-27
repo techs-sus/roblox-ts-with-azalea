@@ -6,6 +6,10 @@ import { join, normalize } from "node:path";
 const BUILD_DIRECTORY = "build";
 
 try {
+	await mkdir(BUILD_DIRECTORY);
+} catch (e) {}
+
+try {
 	await mkdir(join(BUILD_DIRECTORY, "shared"));
 } catch (e) {}
 
