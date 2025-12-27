@@ -8,7 +8,7 @@
 	"packageManager": "pnpm@10.22.0",
 	"scripts": {
 		"serve": "bun run ./serve.ts",
-		"build": "bun --filter \"./{server,client,shared}\" build && bun run ./reinstallShared.ts && bun run ./buildFullModule.ts",
+		"build": "bun --filter \"*\" build && bun run ./reinstallShared.ts && bun run ./buildFullModule.ts",
 		"watch": "bun run ./watch.ts"
 	},
 	"devDependencies": {
@@ -21,8 +21,7 @@
 		"packages": [
 			"server",
 			"client",
-			"shared",
-			"."
+			"shared"
 		],
 		"catalogs": {
 			"full": {
