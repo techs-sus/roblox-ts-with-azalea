@@ -30,6 +30,12 @@ try {
 // exists() is slow but i don't wanna handle the error
 while (await Bun.file(BUILD_LOCK_PATH).exists()) {
 	const pid = ~~(await Bun.file(BUILD_LOCK_PATH).text());
+	try {
+		process.kill(pid, 0);
+	} catch (e) {
+		await Bun.file(BUILD_LOCK_PATH).delete();
+		break;
+	};
 	console.log(`Waiting for build lock to be released by ${pid}...`);
 	await new Promise((resolve) => setTimeout(resolve, 1000));
 }
