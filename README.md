@@ -20,7 +20,9 @@ bun run build
 
 Both commands output to the file `build/run.luau`.
 
-You should see the file `build/run.luau` a bit after starting the watcher. By default, Azalea's novel module method is used, so it should run anywhere. I have tested it personally with OpenSB, so that is what will get the most support. There should be nothing stopping this template from working on Lua Sandbox, Lua Assembling, Void Script Builder, or any other script builders.
+You should see the file `build/run.luau` a bit after starting the watcher. By default, Azalea's novel module method is used, so it should run anywhere.
+
+There is nothing theoretically stopping this template from working on Lua Sandbox, Lua Assembling, Void Script Builder, or any other script builder implementation. However, no other implementation runs Luau competently enough for this template to work, so OpenSB is probably your only option.
 
 An [devtunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) dependant optional HTTP server is available with `bun run serve`. You should be able to easily swap out [devtunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) for {local,hyper}tunnel.
 

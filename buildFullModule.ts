@@ -9,19 +9,8 @@ const BUILD_LOCK_PATH = join(BUILD_DIRECTORY, "build.lock");
 const CLIENT_PAYLOAD_HEADER =
 	'local clientArguments = assert(({...})[1] or owner:FindFirstChild(owner:GetAttribute("getClientArgumentsName")), "failed getting remote function arguments"):InvokeServer()\n';
 
-type Flag =
-	| "--minify"
-	| "--format"
-	| "--compat"
-	| "-m"
-	| "-f"
-	| "-c"
-	| "--legacy"
-	| "--novel"
-	| "--opensb"
-	| "--studio";
-
-const AZALEA_FLAGS: Flag[] = ["--minify", "--novel"];
+// See <https://github.com/techs-sus/azalea> for more details.
+const AZALEA_FLAGS: string = "--minify --novel --level 22";
 
 try {
 	await mkdir(BUILD_DIRECTORY);
@@ -35,7 +24,7 @@ while (await Bun.file(BUILD_LOCK_PATH).exists()) {
 	} catch (e) {
 		await Bun.file(BUILD_LOCK_PATH).delete();
 		break;
-	};
+	}
 	console.log(`Waiting for build lock to be released by ${pid}...`);
 	await new Promise((resolve) => setTimeout(resolve, 1000));
 }
@@ -62,7 +51,8 @@ const compile = async (rbxmPath: string, projectJsonPath: string, payloadOutPath
 	console.log(`Rojo took ${rojoTime} ms to process ${projectJsonPath}`);
 
 	const azaleaTime = await benchmark(
-		async () => await $`azalea generate-full-script -i ${rbxmPath} -o ${payloadOutPath} ${AZALEA_FLAGS}`.quiet(),
+		async () =>
+			await $`azalea generate-full-script -i ${rbxmPath} -o ${payloadOutPath} ${{ raw: AZALEA_FLAGS }}`.quiet(),
 	);
 	console.log(`Azalea took ${azaleaTime} ms to generate ${payloadOutPath}`);
 };
