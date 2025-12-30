@@ -26,7 +26,7 @@ while (await Bun.file(BUILD_LOCK_PATH).exists()) {
 		break;
 	}
 	console.log(`Waiting for build lock to be released by ${pid}...`);
-	await new Promise((resolve) => setTimeout(resolve, 1000));
+	await Bun.sleep(1000);
 }
 
 // MARK: Create build lock
@@ -90,14 +90,16 @@ serverProjectJson.tree.$properties.Attributes[ATTRIBUTE] = {
 	String: fullClientSource,
 };
 
-// MARK: Compile server src
-const injectedServerProjectJsonPath = join(BUILD_DIRECTORY, "final.project.json");
-// write the modified project.json
-await Bun.write(Bun.file(injectedServerProjectJsonPath), JSON.stringify(serverProjectJson, undefined, 2));
-// then build the final payload
-await compile(join(BUILD_DIRECTORY, "final.rbxm"), injectedServerProjectJsonPath, join(BUILD_DIRECTORY, "run.luau"));
+const time = await benchmark(async () => {
+	// MARK: Compile server src
+	const injectedServerProjectJsonPath = join(BUILD_DIRECTORY, "final.project.json");
+	// write the modified project.json
+	await Bun.write(Bun.file(injectedServerProjectJsonPath), JSON.stringify(serverProjectJson, undefined, 2));
+	// then build the final payload
+	await compile(join(BUILD_DIRECTORY, "final.rbxm"), injectedServerProjectJsonPath, join(BUILD_DIRECTORY, "run.luau"));
+});
+
+console.log(`Took ${time} ms to build ${BUILD_DIRECTORY}/run.luau`);
 
 // MARK: Release build lock
 await Bun.file(BUILD_LOCK_PATH).delete();
-
-console.log(`Result is at ${BUILD_DIRECTORY}/run.luau`);

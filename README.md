@@ -9,7 +9,7 @@ If you use [Visual Studio Code](https://code.visualstudio.com), a `code-workspac
 A watcher is available with:
 
 ```bash
-bun run watch
+bun run watchAll
 ```
 
 A traditional, non-incremental build is available with:
