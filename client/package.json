@@ -2,6 +2,7 @@
 	"name": "roblox-ts-with-azalea-client",
 	"version": "1.0.0",
 	"author": "",
+	"main": "out/init.lua",
 	"devDependencies": {
 		"@rbxts/compiler-types": "catalog:full",
 		"@rbxts/types": "catalog:full",
