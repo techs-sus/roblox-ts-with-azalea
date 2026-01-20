@@ -2,4 +2,4 @@ export function makeHello(name: string) {
 	return `Hello ${name}!!!`;
 }
 
-export type ClientArguments = {};
+export type ClientArguments = undefined;

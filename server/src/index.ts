@@ -1,5 +1,5 @@
 import { loadClientCode } from "./utils";
-import { makeHello, ClientArguments } from "@rbxts/shared";
+import { makeHello } from "@rbxts/shared";
 
 declare const owner: Player;
 loadClientCode(owner, {});
