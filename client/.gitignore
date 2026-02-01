@@ -4,3 +4,5 @@
 *.tsbuildinfo
 
 sourcemap.json
+
+/.turbo

@@ -5,18 +5,22 @@
 	"description": "",
 	"keywords": [],
 	"license": "ISC",
-	"packageManager": "pnpm@10.22.0",
+	"packageManager": "bun@1.3.8",
 	"scripts": {
-		"serve": "bun run ./serve.ts",
-		"build": "bun --filter \"./{server,client,shared}\" build && bun run ./reinstallShared.ts && bun run ./buildFullModule.ts",
-		"watch": "nodemon --config nodemon.json",
-		"watchAll": "bun run --filter \"*\" watch"
+		"serve": "bun run serve.ts",
+		"build": "bun run buildFullModule.ts",
+		"watch": "nodemon --config nodemon.json"
+	},
+	"dependencies": {
+		"client": "workspace:*",
+		"server": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/bun": "^1.3.5",
 		"nodemon": "^3.1.11",
 		"ora": "^9.0.0",
-		"prettier": "^3.7.4"
+		"prettier": "^3.7.4",
+		"turbo": "^2.8.1"
 	},
 	"workspaces": {
 		"packages": [

@@ -1,5 +1,5 @@
 {
-	"name": "roblox-ts-with-azalea-server",
+	"name": "server",
 	"version": "1.0.0",
 	"author": "",
 	"main": "out/init.lua",
@@ -23,13 +23,13 @@
 	],
 	"keywords": [],
 	"license": "ISC",
-	"packageManager": "pnpm@10.22.0",
+	"packageManager": "bun@1.3.8",
 	"scripts": {
 		"build": "rbxtsc",
 		"watch": "rbxtsc -w"
 	},
 	"types": "out/index.d.ts",
 	"dependencies": {
-		"@rbxts/shared": "../build/shared/f63c762edc9d9ba65af77e5a3d2179252a5b6e40908bde0594653aad968cb443.tgz"
+		"@rbxts/shared": "../out/6c485d68008ee425bc1be701f60a43ed9c4f4ef4c3c9acaffbe04cc3db432229.tgz"
 	}
 }

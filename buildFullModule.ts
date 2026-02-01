@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 // MARK: Constants
 const ATTRIBUTE = "ClientLoaderSource";
-const BUILD_DIRECTORY = "build";
+const BUILD_DIRECTORY = "out";
 const BUILD_LOCK_PATH = join(BUILD_DIRECTORY, "build.lock");
 const CLIENT_PAYLOAD_HEADER =
 	'local clientArguments = assert(({...})[1] or owner:FindFirstChild(owner:GetAttribute("getClientArgumentsName")), "failed getting remote function arguments"):InvokeServer()\n';
