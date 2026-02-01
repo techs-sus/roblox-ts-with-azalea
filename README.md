@@ -9,13 +9,13 @@ If you use [Visual Studio Code](https://code.visualstudio.com), a `code-workspac
 A watcher is available with:
 
 ```bash
-bun run watchAll
+turbo run watch
 ```
 
 A traditional, non-incremental build is available with:
 
 ```bash
-bun run build
+turbo run build
 ```
 
 Both commands output to the file `build/run.luau`.
