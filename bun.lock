@@ -19,6 +19,9 @@
     "client": {
       "name": "client",
       "version": "1.0.0",
+      "dependencies": {
+        "@rbxts/shared": "../out/52529ee2ac5292938d7c57ee3723d7fa311dd928567c9fe763e6ef2d09925471.tgz",
+      },
       "devDependencies": {
         "@rbxts/compiler-types": "catalog:full",
         "@rbxts/types": "catalog:full",
@@ -36,9 +39,6 @@
     "server": {
       "name": "server",
       "version": "1.0.0",
-      "dependencies": {
-        "@rbxts/shared": "../out/6c485d68008ee425bc1be701f60a43ed9c4f4ef4c3c9acaffbe04cc3db432229.tgz",
-      },
       "devDependencies": {
         "@rbxts/compiler-types": "catalog:full",
         "@rbxts/types": "catalog:full",
@@ -487,6 +487,8 @@
 
     "chokidar/glob-parent": ["glob-parent@5.1.2", "", { "dependencies": { "is-glob": "^4.0.1" } }, "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="],
 
+    "client/@rbxts/shared": ["@rbxts/shared@../out/52529ee2ac5292938d7c57ee3723d7fa311dd928567c9fe763e6ef2d09925471.tgz", {}],
+
     "cliui/string-width": ["string-width@4.2.3", "", { "dependencies": { "emoji-regex": "^8.0.0", "is-fullwidth-code-point": "^3.0.0", "strip-ansi": "^6.0.1" } }, "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="],
 
     "cliui/strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
@@ -504,8 +506,6 @@
     "roblox-ts/@roblox-ts/luau-ast": ["@roblox-ts/luau-ast@2.0.0", "", {}, "sha512-cmMi093IdwBOLVxwuordhM8AmtbyTIyRpsTbB0D/JauidW4SXsQRQowSwWjHo4QP0DRJBXvOIlxtqEQi50uNzQ=="],
 
     "roblox-ts/typescript": ["typescript@5.5.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ=="],
-
-    "server/@rbxts/shared": ["@rbxts/shared@../out/6c485d68008ee425bc1be701f60a43ed9c4f4ef4c3c9acaffbe04cc3db432229.tgz", {}],
 
     "tinyglobby/picomatch": ["picomatch@4.0.3", "", {}, "sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q=="],
 

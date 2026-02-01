@@ -25,6 +25,6 @@
 		"watch": "rbxtsc -w"
 	},
 	"dependencies": {
-		"@rbxts/shared": "../out/6c485d68008ee425bc1be701f60a43ed9c4f4ef4c3c9acaffbe04cc3db432229.tgz"
+		"@rbxts/shared": "../out/52529ee2ac5292938d7c57ee3723d7fa311dd928567c9fe763e6ef2d09925471.tgz"
 	}
 }
