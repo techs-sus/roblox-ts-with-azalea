@@ -50,7 +50,7 @@ const reinstallShared = async (realm: "server" | "client") => {
 	) {
 		delete packageJson.dependencies["@rbxts/shared"];
 
-		await packageJsonFile.write(JSON.stringify(packageJson));
+		await packageJsonFile.write(JSON.stringify(packageJson, null, 2));
 	}
 
 	await $`cd ${realm} && bun rm @rbxts/shared && bun add ../${finalTarballPath}`.quiet();
