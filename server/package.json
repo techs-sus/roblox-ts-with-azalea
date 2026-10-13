@@ -27,6 +27,6 @@
   },
   "types": "out/index.d.ts",
   "dependencies": {
-    "@rbxts/shared": "../out/e9b3987302469c032180c8e2e868f990edd939bce66be8b9f563d4e03a0202ee.tgz"
+    "@rbxts/shared": "../out/c20660c83625b788e9f326ecc7c5dae400a652fb016d968cf13e322242d599db.tgz"
   }
 }
