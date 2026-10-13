@@ -46,8 +46,7 @@ const reinstallShared = async (realm: "server" | "client") => {
 	if (
 		typeof packageJson === "object" &&
 		"dependencies" in packageJson! &&
-		typeof packageJson.dependencies === "object" &&
-		"@rbxts/shared" in packageJson.dependencies!
+		typeof packageJson.dependencies === "object"
 	) {
 		delete packageJson.dependencies["@rbxts/shared"];
 
