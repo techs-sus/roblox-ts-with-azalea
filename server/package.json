@@ -1,35 +1,32 @@
 {
-	"name": "server",
-	"version": "1.0.0",
-	"author": "",
-	"main": "out/init.lua",
-	"devDependencies": {
-		"@rbxts/compiler-types": "catalog:full",
-		"@rbxts/types": "catalog:full",
-		"@typescript-eslint/eslint-plugin": "catalog:full",
-		"@typescript-eslint/parser": "catalog:full",
-		"eslint": "catalog:full",
-		"eslint-config-prettier": "catalog:full",
-		"eslint-plugin-prettier": "catalog:full",
-		"eslint-plugin-roblox-ts": "catalog:full",
-		"prettier": "catalog:full",
-		"roblox-ts": "catalog:full",
-		"typescript": "catalog:full"
-	},
-	"description": "",
-	"files": [
-		"out",
-		"!**/*.tsbuildinfo"
-	],
-	"keywords": [],
-	"license": "ISC",
-	"packageManager": "bun@1.3.8",
-	"scripts": {
-		"build": "rbxtsc",
-		"watch": "rbxtsc -w"
-	},
-	"types": "out/index.d.ts",
-	"dependencies": {
-		"@rbxts/shared": "../out/52529ee2ac5292938d7c57ee3723d7fa311dd928567c9fe763e6ef2d09925471.tgz"
-	}
+  "name": "server",
+  "version": "1.0.0",
+  "author": "",
+  "main": "out/init.lua",
+  "devDependencies": {
+    "@rbxts/compiler-types": "catalog:full",
+    "@rbxts/types": "catalog:full",
+    "@typescript-eslint/eslint-plugin": "catalog:full",
+    "@typescript-eslint/parser": "catalog:full",
+    "eslint": "catalog:full",
+    "eslint-config-prettier": "catalog:full",
+    "eslint-plugin-prettier": "catalog:full",
+    "eslint-plugin-roblox-ts": "catalog:full",
+    "prettier": "catalog:full",
+    "roblox-ts": "catalog:full",
+    "typescript": "catalog:full"
+  },
+  "description": "",
+  "files": ["out", "!**/*.tsbuildinfo"],
+  "keywords": [],
+  "license": "ISC",
+  "packageManager": "bun@1.3.8",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w"
+  },
+  "types": "out/index.d.ts",
+  "dependencies": {
+    "@rbxts/shared": "../out/e9b3987302469c032180c8e2e868f990edd939bce66be8b9f563d4e03a0202ee.tgz"
+  }
 }

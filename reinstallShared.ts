@@ -13,10 +13,12 @@ try {
 // 	await mkdir(join(BUILD_DIRECTORY, "shared"));
 // } catch (e) {}
 
+// initially generate the tarball with a random name to avoid conflicts
 const temporaryTarballName = new CryptoHasher("blake2b256")
 	.update(crypto.getRandomValues(new Uint8Array(64)))
 	.digest()
 	.toHex();
+
 const temporaryTarballPath = join(
 	BUILD_DIRECTORY,
 	// "shared",
@@ -38,21 +40,31 @@ const finalTarballPath = join(
 await rename(temporaryTarballPath, finalTarballPath);
 
 const reinstallShared = async (realm: "server" | "client") => {
+	// this guards against the package.json potentially containing an outdated hash
+	const packageJsonFile = Bun.file(`${realm}/package.json`);
+	let packageJson = JSON.parse(await packageJsonFile.text());
+	if (
+		typeof packageJson === "object" &&
+		"dependencies" in packageJson! &&
+		typeof packageJson.dependencies === "object" &&
+		"@rbxts/shared" in packageJson.dependencies!
+	) {
+		delete packageJson.dependencies["@rbxts/shared"];
+
+		await packageJsonFile.write(JSON.stringify(packageJson));
+	}
+
 	await $`cd ${realm} && bun rm @rbxts/shared && bun add ../${finalTarballPath}`.quiet();
 	console.log(`Reinstalled shared tarball for realm ${realm}`);
 };
 
-// await $`bun run --filter "./{server,client}" reinstallShared`;
-await Promise.all([reinstallShared("server"), reinstallShared("client")]);
+await reinstallShared("server");
+await reinstallShared("client");
 
 // delete old tarballs after replacing with new tarball
-// const glob = new Glob(`${BUILD_DIRECTORY}/shared/*.tgz`);
 const glob = new Glob(`${BUILD_DIRECTORY}/*.tgz`);
 for await (const path of glob.scan()) {
 	if (normalize(path) !== normalize(finalTarballPath)) {
 		await Bun.file(path).delete();
 	}
 }
-
-// await $`bun --filter "./{client,server}" build`; /* roblox-ts build */
-// await $`bun run build.ts`;
