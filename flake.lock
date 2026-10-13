@@ -1,0 +1,247 @@
+{
+  "nodes": {
+    "azalea": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "run-in-cloud": "run-in-cloud",
+        "rust-overlay": "rust-overlay",
+        "wally-nix": "wally-nix"
+      },
+      "locked": {
+        "lastModified": 1791554064,
+        "narHash": "sha256-MavMUS6SHzJCAhwTWFkBExXUPA+c1BvMZLxyfPk3GgE=",
+        "owner": "techs-sus",
+        "repo": "azalea",
+        "rev": "7580a435ea52481e08988b6e96134484474c8309",
+        "type": "github"
+      },
+      "original": {
+        "owner": "techs-sus",
+        "repo": "azalea",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1791914995,
+        "narHash": "sha256-Zf/xfQEAasnwnmEfHqW/4hjDE/s44yn2hD4RuVIZRjA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b7a79d3fea1e214f6d668d521cecec0c01e26544",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1791456040,
+        "narHash": "sha256-H83yz/do+hjOO0uujHyH8RgtIQP2v7Mw+cLwcZK/xKc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1738435198,
+        "narHash": "sha256-5+Hmo4nbqw8FrW85FlNm4IIrRnZ7bn0cmXlScNsNRLo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f6687779bf4c396250831aa5a32cbfeb85bb07a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1738297584,
+        "narHash": "sha256-AYvaFBzt8dU0fcSK2jKD0Vg23K2eIRxfsVXIPCW9a0E=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9189ac18287c599860e878e905da550aa6dec1cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1791734076,
+        "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "azalea": "azalea",
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_4"
+      }
+    },
+    "run-in-cloud": {
+      "inputs": {
+        "flake-utils": [
+          "azalea",
+          "flake-utils"
+        ],
+        "nixpkgs": "nixpkgs_2",
+        "rust-overlay": [
+          "azalea",
+          "rust-overlay"
+        ]
+      },
+      "locked": {
+        "lastModified": 1751128059,
+        "narHash": "sha256-GFOmaTTndRVRAvbtctWuFL7SsYmVWzBTT9CziW81LLQ=",
+        "owner": "techs-sus",
+        "repo": "run-in-cloud",
+        "rev": "49a1cbd1f12eda324261dd143fab5a0834721573",
+        "type": "github"
+      },
+      "original": {
+        "owner": "techs-sus",
+        "repo": "run-in-cloud",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "azalea",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791535654,
+        "narHash": "sha256-QFgGi6Wgh7AgqPFdAXEmkTgnR0B5M0omheIHvo/02dU=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "4ca2963243427cb86bd6b4d9ca6010db0162a619",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "wally-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "wallySource": "wallySource"
+      },
+      "locked": {
+        "lastModified": 1738427593,
+        "narHash": "sha256-oixdmV7RRtURrGHLBOmWsaKqjBUomb4OuzBZsXunIq4=",
+        "owner": "techs-sus",
+        "repo": "wally-nix",
+        "rev": "0112125510d8706707cf586a27345733a6e42b1e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "techs-sus",
+        "repo": "wally-nix",
+        "type": "github"
+      }
+    },
+    "wallySource": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1735854515,
+        "narHash": "sha256-LuDACyD3gW16/Y+YMKjcnHGiTA1W8zJGOXobBebA0c4=",
+        "owner": "UpliftGames",
+        "repo": "wally",
+        "rev": "2c928d9dcd0cee67bd5869d44970ad3e70e9fb58",
+        "type": "github"
+      },
+      "original": {
+        "owner": "UpliftGames",
+        "repo": "wally",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
