@@ -19,7 +19,7 @@
 		"@types/bun": "^1.4.3",
 		"nodemon": "^3.1.14",
 		"ora": "^9.4.1",
-		"prettier": "^3.9.10",
+		"prettier": "catalog:full",
 		"turbo": "^2.11.8"
 	},
 	"workspaces": {
