@@ -29,6 +29,7 @@
 
             rojo
             azalea.packages.${system}.default
+            cloudflared
           ];
 
           shellHook = "";
